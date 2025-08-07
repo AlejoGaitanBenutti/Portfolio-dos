@@ -1,0 +1,226 @@
+.intro {
+  color: var(--text-default);
+  max-width: 700px;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 6.2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.gray {
+   color: rgba(182, 180, 189, 0.2);
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 800;
+  color: var(--text-default);
+}
+
+.text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;          /* equivalente a 1.4 */
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--text-muted);   /* reemplazá por el color que quieras usar */
+  margin-bottom: 2rem;
+}
+
+
+.stats {
+  display: flex;
+  gap: 3rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  padding-top: 20px;
+
+}
+
+.stats div {
+  line-height: 1.4;
+  text-align: center;
+}
+
+.stats strong {
+  display: block;
+  font-size: 70px;
+  font-weight: 700;
+  color: var(--text-default); /* blanco puro */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0em;
+  line-height: 1.2;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3.4rem;
+  justify-content: center;
+  width: 696px;
+  height: 240px;
+}
+
+/* Tarjetas base */
+.card {
+  width: 310px;
+  min-height: 190px;
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Fondo naranja con imagen */
+.orange {
+  background-image: url('/imagenes/background-card-uno.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  
+}
+
+/* Fondo verde */
+.green {
+  background: #d6ff00;
+  color: #000;
+  
+}
+
+/* Título dentro de la card */
+.cardTitle {
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+/* Contenedor de la flecha */
+.containArrow {
+  display: flex;
+  justify-content: end;
+}
+
+
+.cardArrow {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(21, 19, 18);
+  border-radius: 6px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+
+  color: rgb(21, 19, 18); /* currentColor usado por SVG */
+}
+
+/* Apunta directamente al <svg> y su fill */
+.cardArrow svg {
+  fill: currentColor;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+
+.cardArrow:hover {
+ 
+   cursor: pointer;
+}
+
+
+
+
+/* Logos de tecnologías */
+.techLogos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.techLogos img {
+  height: 40px;
+  width: auto;
+  filter: brightness(0); /* negros sobre fondo claro */
+}
+
+.green .techLogos img {
+  filter: none; /* normales sobre fondo claro */
+}
+
+/* Responsive móvil */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Responsive tablet */
+@media (max-width: 768px) {
+  .intro {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #A9A9B3;
+    line-height: 1.6;
+    text-align: center;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    padding: 1rem;
+    max-width: 360px;
+    margin: 2rem auto 0 auto;
+    box-sizing: border-box;
+  }
+
+  .stats div {
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+    word-break: break-word;
+  }
+
+  .stats strong {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+}

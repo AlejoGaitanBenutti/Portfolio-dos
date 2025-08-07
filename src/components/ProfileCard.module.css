@@ -1,0 +1,160 @@
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
+  width: 360px;
+  min-height: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  background: linear-gradient(to bottom, #fff 60%, #f9f9f9);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+   
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 340px; /* más pequeño como en la plantilla original */
+  overflow: hidden;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: 15px!important;
+  transform: scale(0.9);
+}
+
+.name {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+.icon {
+  
+  margin: 0.5rem 0;
+  position: absolute;
+  z-index: 10;
+  width: 135px;
+  top: 410px;
+  left: 5px;
+  
+}
+
+
+.icon img{
+  width: 100%;
+  display: block;
+  
+}
+
+
+.curveIcon{
+  position: absolute;
+  z-index:10;
+  width: 190px;
+  transform: rotate(-178deg);
+  top: -62px;
+  left:-20px;
+}
+
+.curveIcon img{
+  width: 100%;
+  display: block;
+}
+
+
+.description {
+  
+ font-size: 1rem;
+  color: #6A6B6E;
+ font-weight: 600;
+  line-height: 1.4;
+   font-family: 'Inter', sans-serif;
+    padding: 0.6rem 1rem;
+}
+
+.social a {
+  display: inline-block;
+  margin: 0 0.4rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #ff5722;
+}
+
+
+.social a:hover{
+  transform: scale(1.1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.7s ease-out;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .card {
+    margin-top: 3rem;
+    padding: 1rem;
+    width: 100%;
+    min-height: auto;
+   
+    padding-top: 25px;
+    
+    
+  }
+
+  .imageWrapper {
+    height: 260px;
+  }
+
+  .avatar {
+    width: 260px;
+  }
+
+  .name {
+    font-size: 1.8rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0rem;
+  }
+
+  .icon {
+    top: 220px;
+    width: 90px;
+  }
+
+  .curveIcon {
+    width: 190px;
+    top: -95px;
+    left: 10px;
+    transform: rotate(220deg);
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.6rem;
+  }
+}
