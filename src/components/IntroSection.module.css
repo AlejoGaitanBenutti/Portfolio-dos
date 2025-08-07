@@ -1,17 +1,21 @@
 .intro {
   color: var(--text-default);
-  max-width: 700px;
+  max-width: 780px;
   padding: 1rem;
+  margin: 0 auto; /* <--- asegura centrado en desktop y mobile */
+  box-sizing: border-box;
 }
 
 .title {
   font-size: 6.2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+  min-height: 270px;
 }
 
+
 .gray {
-   color: rgba(182, 180, 189, 0.2);
+  color: rgba(182, 180, 189, 0.2);
   font-weight: 600;
 }
 
@@ -25,13 +29,12 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%;          /* equivalente a 1.4 */
+  line-height: 140%;
   letter-spacing: 0em;
   text-align: left;
-  color: var(--text-muted);   /* reemplazá por el color que quieras usar */
+  color: var(--text-muted);
   margin-bottom: 2rem;
 }
-
 
 .stats {
   display: flex;
@@ -39,7 +42,6 @@
   font-size: 1rem;
   color: var(--text-muted);
   padding-top: 20px;
-
 }
 
 .stats div {
@@ -51,7 +53,7 @@
   display: block;
   font-size: 70px;
   font-weight: 700;
-  color: var(--text-default); /* blanco puro */
+  color: var(--text-default);
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0em;
   line-height: 1.2;
@@ -63,15 +65,18 @@
   gap: 2rem;
   margin-top: 3.4rem;
   justify-content: center;
-  width: 696px;
-  height: 240px;
+  width: 100%;      /* <--- antes 696px */
+  height: auto;     /* <--- evita overflow vertical innecesario */
+  max-width: 700px; /* <--- límite amable para desktop */
+  margin-left: auto;
+  margin-right: auto;
 }
-
 /* Tarjetas base */
 .card {
-  width: 310px;
-  min-height: 190px;
-  padding: 1.2rem;
+  width: 100%;            /* ocupa el ancho disponible */
+  max-width: 330px;       /* pero no más de 330px en desktop */
+  min-height: 220px;
+  padding: 1rem;
   border-radius: 12px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -81,6 +86,7 @@
   position: relative;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -89,25 +95,54 @@
 
 /* Fondo naranja con imagen */
 .orange {
-  background-image: url('/imagenes/background-card-uno.svg');
+  background-image: url('/imagenes/test.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   color: #fff;
-  
 }
 
 /* Fondo verde */
 .green {
-  background: #d6ff00;
+  background-image: url('/imagenes/test-cuatro.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: #000;
-  
 }
 
 /* Título dentro de la card */
 .cardTitle {
   font-size: 1.4rem;
   line-height: 1.4;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.247);
+}
+
+.cardSubtitle {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+  opacity: 0.9;
+  line-height: 140%;
+  letter-spacing: 0.6px;
+  padding-right: 2rem;
+  text-align: start;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Colores diferenciados por fondo */
+.orange .cardTitle,
+.orange .cardSubtitle,
+.orange .cardArrow {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.green .cardTitle,
+.green .cardSubtitle,
+.green .cardArrow {
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
 }
 
 /* Contenedor de la flecha */
@@ -116,19 +151,18 @@
   justify-content: end;
 }
 
-
 .cardArrow {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgb(21, 19, 18);
+  border: 1px solid currentColor;
   border-radius: 6px;
   background-color: transparent;
-  transition: background-color 0.3s ease;
-
-  color: rgb(21, 19, 18); /* currentColor usado por SVG */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  color: inherit;
 }
 
 /* Apunta directamente al <svg> y su fill */
@@ -137,40 +171,87 @@
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
-
-.cardArrow:hover {
- 
-   cursor: pointer;
+.arrowIcon {
+  fill: currentColor;
+  transition: transform 0.3s ease;
 }
 
+.cardArrow:hover .arrowIcon {
+  transform: translateX(3px);
+}
 
-
+.cardArrow:hover {
+  cursor: pointer;
+}
 
 /* Logos de tecnologías */
 .techLogos {
   display: flex;
-  justify-content: flex-start;
+  gap: 0.5rem;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
+}
+
+.techIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
 }
 
 .techLogos img {
   height: 40px;
   width: auto;
-  filter: brightness(0); /* negros sobre fondo claro */
+  filter: brightness(0);
 }
 
 .green .techLogos img {
-  filter: none; /* normales sobre fondo claro */
+  filter: none;
 }
+
+
+
+/* Contenedor de la palabra dinámica */
+.dynamic {
+  font-weight: 800;
+  color: var(--text-default);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Cursor/parpadeo */
+.caret {
+  width: 0.08em;
+  height: 1em;
+  margin-left: 0.12em;
+  background: var(--text-default);
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+}
+
+/* Parpadeo */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Accesibilidad: si el usuario prefiere menos animación, apaga el parpadeo */
+@media (prefers-reduced-motion: reduce) {
+  .caret { animation: none; }
+}
+
 
 /* Responsive móvil */
 @media (max-width: 480px) {
-  .card {
+  .title { min-height: 115px; }  /* ya lo tenías, bien */
+
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;   /* centra las cards */
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;       /* que no se limite en mobile */
+    height: auto;
+  }
+
+  .card {
+    max-width: 100%;       /* ocupa el ancho del viewport */
   }
 }
 
