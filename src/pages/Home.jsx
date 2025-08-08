@@ -4,13 +4,15 @@ import ProfileCard from "../components/ProfileCard";
 import IntroSection from "../components/IntroSection";
 import ProjectSection from "../components/ProjectSection"; // <- solo lista, sin card
 import styles from "../styles/Home.module.css";
+import Tools from "../components/Tools";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <>
       <NavBar />
 
-      {/* Layout 2 columnas: izquierda sticky, derecha scrollea */}
       <main className={styles.page}>
         <aside className={styles.sidebar}>
           <div className={styles.sticky}>
@@ -19,7 +21,6 @@ const Home = () => {
         </aside>
 
         <section className={styles.content}>
-          {/* SECCIONES que scrollean */}
           <section id="home">
             <IntroSection />
           </section>
@@ -28,11 +29,18 @@ const Home = () => {
             <ProjectSection />
           </section>
 
-          {/* Aquí puedes seguir sumando secciones… */}
-          {/* <section id="experience"><ExperienceSection /></section> */}
-          {/* <section id="contact"><ContactSection /></section> */}
+          <section id="tools">
+            <Tools />
+          </section>
+
+          {/* Contacto dentro de la columna derecha → forzamos stack */}
+          <section id="contact">
+            <Contact stack />
+          </section>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 };

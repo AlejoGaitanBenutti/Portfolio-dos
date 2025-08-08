@@ -52,12 +52,7 @@ const ProfileCard = () => {
             <span className={styles["skill-badge"]}>PHP</span>
             <span className={styles["skill-badge"]}>MySQL</span>
             <span className={styles["skill-badge"]}>Docker</span>
-            <span className={styles["skill-badge"]}>JavaScript</span>
-            <span className={styles["skill-badge"]}>Github</span>
-            <span className={styles["skill-badge"]}>Render</span>
-            <span className={styles["skill-badge"]}>Vercel</span>
-            <span className={styles["skill-badge"]}>Postman</span>
-            <span className={styles["skill-badge"]}>Trello</span>
+            <span className={styles["skill-badge"]}>JavaScript</span>        
           </div>
 
           

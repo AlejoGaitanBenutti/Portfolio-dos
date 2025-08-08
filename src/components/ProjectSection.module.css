@@ -7,7 +7,7 @@
   font-size: clamp(42px, 5vw, 90px);
   line-height: 1.05;
   font-weight: 800;
-  text-align: center;
+  text-align: start;
 }
 .gray {
   color: rgba(182,180,189,0.2);
