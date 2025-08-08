@@ -267,6 +267,8 @@
   .title {
     font-size: 42px;
     text-align: center;
+    
+    min-height: 160px;
   }
 
   .text {
@@ -283,9 +285,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     justify-items: center;
-    padding: 1rem;
+    
     max-width: 360px;
-    margin: 2rem auto 0 auto;
+    
     box-sizing: border-box;
   }
 

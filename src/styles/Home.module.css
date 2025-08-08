@@ -22,9 +22,9 @@
 .content {
   /* el contenido de la derecha (intro/proyectos) también centrado */
   width: 100%;
-  max-width: 780px;
+  
   margin: 0 auto;
-  display: grid;
+ 
   gap: 4rem;
 }
 

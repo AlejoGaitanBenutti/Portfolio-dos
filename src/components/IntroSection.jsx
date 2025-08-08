@@ -46,7 +46,7 @@ const IntroSection = () => {
     <span aria-live="polite">{displayText}</span>
     <span className={styles.caret} aria-hidden="true" />
   </span>
-</h1>
+  </h1>
      <p className={styles.text}>
   Apasionado por el desarrollo web y las soluciones prácticas.<br />
   Trabajo con tecnologías como React, PHP y bases de datos relacionales.<br />
