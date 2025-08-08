@@ -81,3 +81,18 @@
   font-size: 0.95rem;
   line-height: 1.45;
 }
+@media (max-width: 520px) {
+
+  .header{
+    margin-bottom: 25px;
+  }
+
+  .kicker{
+    font-size: 42px!important;
+  }
+
+  .title{
+    font-size: 42px;
+  }
+
+}

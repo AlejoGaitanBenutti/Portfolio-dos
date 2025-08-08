@@ -26,7 +26,7 @@ export default function Footer() {
               <a href="#" aria-label="Twitter/X" className={styles.socialBtn}>𝕏</a>
             </div>
           </div>
-
+        <div className={styles.containNavegacionServicios}>
           {/* Navegación */}
           <nav className={styles.col}>
             <h4 className={styles.colTitle}>Navegación</h4>
@@ -50,7 +50,7 @@ export default function Footer() {
               <li><a href="#services">Consultoría</a></li>
             </ul>
           </div>
-
+        </div>
           {/* Contacto (cards) */}
           <div className={styles.contactCol}>
             <h4 className={styles.colTitle}>Contacto</h4>
@@ -86,11 +86,14 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className={styles.bottomBar}>
+          
           <p className={styles.copy}>© {year} Alejo Gaitan Benutti. Todos los derechos reservados.</p>
+          <div className={styles.containerLegal}>
           <ul className={styles.legalList}>
             <li><a href="#privacy">Privacidad</a></li>
             <li><a href="#terms">Términos</a></li>
           </ul>
+          </div>
         </div>
       </div>
     </footer>
