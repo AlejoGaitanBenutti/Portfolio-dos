@@ -14,10 +14,7 @@
   justify-content: center;
 }
 
-.sticky {
-  position: static;              /* sin sticky en móvil/tablet */
-  top: auto;
-}
+
 
 .content {
   /* el contenido de la derecha (intro/proyectos) también centrado */
@@ -39,12 +36,7 @@
 
   .sidebar { justify-content: initial; }
 
-  .sticky {
-    position: sticky;
-    top: 72px;                   /* altura del navbar */
-    align-self: start;
-  }
-
+ 
   .content {
     max-width: none;             /* la columna derecha puede crecer */
     margin: 0;

@@ -14,15 +14,15 @@ const ProjectSection = () => {
       id: 2,
       title: "Reliable",
       subtitle: "Landing - Ecommerce",
-      thumb: "/imagenes/bandidos.PNG",
-      href: "#"
+      thumb: "/imagenes/reliable.png",
+      href: "https://www.reliablecarsapp.com/"
     },
     {
       id: 3,
       title: "Bandidos Barbershop",
       subtitle: "Landing-Ecommerce ",
-      thumb: "/imagenes/bandidos.PNG",
-      href: "#"
+      thumb: "/imagenes/bandidos.png",
+      href: "https://barber-front-s4n3.vercel.app/"
     },
     {
       id: 4,
@@ -41,9 +41,9 @@ const ProjectSection = () => {
 
       <div className={styles.list}>
         {projects.map(p => (
-          <a className={styles.item} href={p.href} key={p.id}>
+          <a className={styles.item} href={p.href} key={p.id} target="_blank">
             <div className={styles.thumb}>
-              <img src="/imagenes/bandidos-test.PNG" alt={p.title} loading="lazy" />
+              <img src={p.thumb} alt={p.title} loading="lazy" />
             </div>
             <div className={styles.info}>
               <h3>{p.title}</h3>

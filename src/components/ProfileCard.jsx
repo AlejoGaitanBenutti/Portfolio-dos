@@ -1,8 +1,15 @@
 import React from 'react';
 import styles from './profileCard.module.css';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import CVPreviewDialog from './CVPreviewDialog';
 
 const ProfileCard = () => {
+  const [cvOpen, setCvOpen] = React.useState(false);
+
+  // Si tu PDF tiene espacios en el nombre, encodeURI es importante
+  const CV_URL = encodeURI("/cv-alejo-gaitan-benutti.pdf");
+  const CV_NAME = "CV-Alejo-Gaitan-Benutti.pdf";
+
   return (
     <div className={styles["profile-card-container"]}>
       <div className={styles["profile-card"]}>
@@ -39,13 +46,13 @@ const ProfileCard = () => {
               Soy Alejo, desarrollador full-stack junior. Disfruto construir interfaces con React y APIs en PHP/MySQL. Vengo de proyectos personales y certificaciones UTN; quiero aportar en un equipo donde pueda seguir aprendiendo y entregar valor desde el día uno. Disponible (UTC-3).
             </p>
           </div>
+
           <div className={styles["profile-formation"]}>
             <p className={styles["formation-title"]}>Formación</p>
             <p className={styles["formation-text"]}>
               Tecnicatura en Programación (en curso) • UTN (e-learning): Professional Front-end , Diplomatura en PHP
             </p>
           </div>
-          
 
           <div className={styles["skills-container"]}>
             <span className={styles["skill-badge"]}>React</span>
@@ -55,11 +62,9 @@ const ProfileCard = () => {
             <span className={styles["skill-badge"]}>JavaScript</span>        
           </div>
 
-          
-
           <div className={styles["social-links"]}>
             <a
-              href="https://github.com/alejogaitan"
+              href="https://github.com/AlejoGaitanBenutti"
               target="_blank"
               rel="noopener noreferrer"
               className={`${styles["social-button"]} ${styles["github"]}`}
@@ -67,7 +72,7 @@ const ProfileCard = () => {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/in/alejogaitan"
+              href="https://www.linkedin.com/in/alejo-gaitan-benutti-47a987250/?trk=opento_sprofile_topcard"
               target="_blank"
               rel="noopener noreferrer"
               className={`${styles["social-button"]} ${styles["linkedin"]}`}
@@ -75,20 +80,34 @@ const ProfileCard = () => {
               <FaLinkedin />
             </a>
             <a
-              href="mailto:alejo@email.com"
+               href="https://mail.google.com/mail/?view=cm&fs=1&to=alejogbs8@gmail.com"
+               rel="noopener noreferrer"
+               target='_blank'
               className={`${styles["social-button"]} ${styles["email"]}`}
             >
               <FaEnvelope />
             </a>
           </div>
 
-          <button className={styles["cta-button"]}>
-            Descargar CV
+          {/* Botón para abrir vista previa */}
+          <button
+            className={styles["cta-button"]}
+            onClick={() => setCvOpen(true)}
+          >
+            Ver CV
           </button>
         </div>
 
         <div className={styles["decorative-line"]}></div>
       </div>
+
+      {/* Modal de vista previa */}
+      <CVPreviewDialog
+        open={cvOpen}
+        onClose={() => setCvOpen(false)}
+        url={CV_URL}
+        downloadName={CV_NAME}
+      />
     </div>
   );
 };
